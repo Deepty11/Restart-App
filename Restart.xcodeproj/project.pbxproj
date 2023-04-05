@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DE5730429DD2B1800FB5409 /* CircleRingGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5730329DD2B1800FB5409 /* CircleRingGroupView.swift */; };
 		FD20DF4529CDFDCA00BACF09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDD21B8F29CDF68E00F53D90 /* Assets.xcassets */; };
 		FDB3CD8029D86C2E00375831 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3CD7F29D86C2E00375831 /* OnboardingView.swift */; };
 		FDB3CD8229D86C3800375831 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB3CD8129D86C3800375831 /* HomeView.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DE5730329DD2B1800FB5409 /* CircleRingGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleRingGroupView.swift; sourceTree = "<group>"; };
 		FDB3CD7E29D86BAF00375831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FDB3CD7F29D86C2E00375831 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		FDB3CD8129D86C3800375831 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DE5730529DD2B4200FB5409 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DE5730329DD2B1800FB5409 /* CircleRingGroupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FDD21B7F29CDF68D00F53D90 = {
 			isa = PBXGroup;
 			children = (
@@ -61,13 +71,12 @@
 			isa = PBXGroup;
 			children = (
 				FDB3CD7E29D86BAF00375831 /* Info.plist */,
-				FDD21BA029CDF8AE00F53D90 /* Utilities */,
-				FDD21B9F29CDF89F00F53D90 /* Views */,
 				FDD21B9D29CDF76300F53D90 /* Sounds */,
 				FDD21B8B29CDF68D00F53D90 /* RestartApp.swift */,
 				FDD21B9E29CDF88F00F53D90 /* Screens */,
 				FDD21B8F29CDF68E00F53D90 /* Assets.xcassets */,
 				FDD21B9129CDF68E00F53D90 /* Preview Content */,
+				3DE5730529DD2B4200FB5409 /* Views */,
 			);
 			path = Restart;
 			sourceTree = "<group>";
@@ -97,20 +106,6 @@
 				FDB3CD8129D86C3800375831 /* HomeView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		FDD21B9F29CDF89F00F53D90 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		FDD21BA029CDF8AE00F53D90 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +183,7 @@
 				FDB3CD8029D86C2E00375831 /* OnboardingView.swift in Sources */,
 				FDB3CD8229D86C3800375831 /* HomeView.swift in Sources */,
 				FDD21B8E29CDF68D00F53D90 /* ContentView.swift in Sources */,
+				3DE5730429DD2B1800FB5409 /* CircleRingGroupView.swift in Sources */,
 				FDD21B8C29CDF68D00F53D90 /* RestartApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
