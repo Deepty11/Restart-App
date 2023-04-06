@@ -7,9 +7,18 @@
 
 import SwiftUI
 
+extension ZStack {
+    func animationModifier(_ isAnimating: Bool) -> some View {
+        return self.blur(radius: isAnimating ? 0 : 10)
+            .opacity(isAnimating ? 1 : 0)
+            .scaleEffect(isAnimating ? 1 : 0.5)
+            .animation(.easeIn(duration: 1), value: isAnimating)
+    }
+}
 struct CircleRingGroupView: View {
     @State var ShapeColor: Color
     @State var ShapeOpacity: Double
+    @State private var isAnimating: Bool = false
     
     var body: some View {
         ZStack{
@@ -20,6 +29,13 @@ struct CircleRingGroupView: View {
                 .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 80)
                 .frame(width: 260, height: 260, alignment: .center)
         }
+        .animationModifier(isAnimating)
+        .onAppear(perform: {
+            isAnimating = true
+        })
+        
+        
+        
     }
 }
 
