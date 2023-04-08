@@ -19,23 +19,21 @@ struct CircleRingGroupView: View {
     @State var ShapeColor: Color
     @State var ShapeOpacity: Double
     @State private var isAnimating: Bool = false
+    let widthConstant: Double = 240.0
     
     var body: some View {
         ZStack{
             Circle()
                 .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 20)
-                .frame(width: 260, height: 260, alignment: .center)
+                .frame(width: widthConstant, height: widthConstant, alignment: .center)
             Circle()
                 .stroke(ShapeColor.opacity(ShapeOpacity), lineWidth: 80)
-                .frame(width: 260, height: 260, alignment: .center)
+                .frame(width: widthConstant, height: widthConstant, alignment: .center)
         }
         .animationModifier(isAnimating)
         .onAppear(perform: {
             isAnimating = true
         })
-        
-        
-        
     }
 }
 
@@ -43,9 +41,10 @@ struct CircleRingGroupView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color("ColorBlue")
-                .ignoresSafeArea()
+                .ignoresSafeArea() // to check how the rings will show in the OnBoardingView in the preview, optional
                 
-            CircleRingGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
+            CircleRingGroupView(ShapeColor: .white,
+                                ShapeOpacity: 0.2)
         }
     }
 }

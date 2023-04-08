@@ -10,12 +10,13 @@ import SwiftUI
 struct OnboardingView: View {
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
     
-    @State var buttonWidth: Double = UIScreen.main.bounds.width - 80
-    @State var buttonOffset: CGFloat = 0
-    @State var isAnimating: Bool = false
-    @State var imageOffset: CGSize = .zero // CGSize(width: 0, height: 0)
-    @State var indicatorOpacity: Double = 1.0
-    @State var textTitle: String = "Share"
+    @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
+    @State private var buttonOffset: CGFloat = 0
+    @State private var isAnimating: Bool = false
+    @State private var imageOffset: CGSize = .zero // same as CGSize(width: 0, height: 0)
+    @State private var indicatorOpacity: Double = 1.0
+    @State private var textTitle: String = "Share"
+    private let hapticFeedback = UINotificationFeedbackGenerator()
     
     var body: some View {
         ZStack {
@@ -99,9 +100,6 @@ struct OnboardingView: View {
                                 .opacity(indicatorOpacity)
                         }
                         
-                        
-                    
-                    
                 }
                 
                 Spacer()
@@ -159,14 +157,16 @@ struct OnboardingView: View {
                                     withAnimation (
                                         Animation.easeOut(duration: 1.5)) {
                                             if buttonOffset > buttonWidth / 2 {
+                                                hapticFeedback.notificationOccurred(.success)
+                                                playSound(sound: "chimeup",
+                                                          type: "mp3")
                                                 buttonOffset = buttonWidth - 80
                                                 isOnboardingViewActive = false
                                             } else {
+                                                hapticFeedback.notificationOccurred(.warning)
                                                 buttonOffset = 0
                                             }
                                         }
-                                    
-                                    
                                 })
                         )
                         
@@ -184,6 +184,7 @@ struct OnboardingView: View {
         .onAppear {
             isAnimating = true
         }
+        .preferredColorScheme(.dark)
     }
 
 }
